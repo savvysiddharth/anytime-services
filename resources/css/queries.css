@@ -1,0 +1,58 @@
+/* big tablet to 1200px (width smaller than the 1140px row) */
+@media only screen and (max-width: 1200px) {
+  .row {
+    padding: 0 4%;
+  }
+}
+
+/* small tablets to big tablets: 768 - 1023 */
+@media only screen and (max-width: 1023px) {
+
+  html,body {
+    font-size: 12px;
+  }
+
+  h1 {
+    font-size: 230%;
+  }
+
+  .btn {
+    padding: 8px 10px;
+  }
+
+  .hero-box {
+    text-align: center;
+    position: absolute;
+    right: 20px;
+    bottom: 100px;
+  }
+
+  .hero-box img {
+    width: 80px;
+  }
+
+  .main-nav-container {
+    visibility: hidden;
+  }
+
+  .hamburger-btn {
+    display: block;
+  }
+
+  .rw-box {
+    margin-top:100px;
+    margin-bottom: 40px;
+    font-size: 200%;
+    line-height: 145%;
+  }
+
+  .rw-services span {
+    top: 32px;
+  }
+
+}
+
+/* small phones to small tablets: 481 - 767 */
+@media only screen and (max-width: 767px) {
+
+}
