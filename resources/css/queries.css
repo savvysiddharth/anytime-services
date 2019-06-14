@@ -8,6 +8,11 @@
 /* small tablets to big tablets: 768 - 1023 */
 @media only screen and (max-width: 1023px) {
 
+}
+
+/* small phones to small tablets: 481 - 767 */
+@media only screen and (max-width: 767px) {
+
   html,body {
     font-size: 12px;
   }
@@ -52,7 +57,14 @@
 
 }
 
-/* small phones to small tablets: 481 - 767 */
-@media only screen and (max-width: 767px) {
+/* small phones: 0 to 480px  */
+@media only screen and (max-width: 400px) {
+  html,body {
+    font-size: 9px;
+  }
+
+  .rw-services span {
+    top: 24px;
+  }
 
 }
