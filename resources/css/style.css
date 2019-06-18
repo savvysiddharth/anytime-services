@@ -15,8 +15,8 @@ dark-blue: #2980b9
 }
 
 html,body {
-  background-color: rgb(240, 240, 240);
-  color: rgb(12, 12, 12);
+  background-color: rgb(250, 250, 250);
+  color: rgb(26, 26, 26);
   font-family: 'GeoSansLight', sans-serif;
   font-size: 16px;
   letter-spacing: 2px;
@@ -35,7 +35,7 @@ html,body {
 }
 
 section {
-  padding: 80px 0;
+  padding: 70px 0;
 }
 
 h1,h2,h3 {
@@ -49,13 +49,23 @@ h1 {
 }
 
 h2 {
-  font-size: 170%;
+  font-size: 200%;
   text-align: center;
   margin-bottom: 30px;
 }
 
+h2::after {
+  content: '';
+  display: block;
+  margin: 10px auto 0 auto;
+  height: 2px;
+  width: 60px;
+  background-color: #409ad5;
+}
+
 h3 {
   font-weight: 500;
+  font-size: 130%;
 }
 
 /* BUTTONS */
@@ -78,6 +88,81 @@ h3 {
   background-color: #409ad5;
 }
 
+/* Modal */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  top:0;
+  right:0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.733);
+  animation: fadeIn 0.5s;
+  overflow: auto;
+}
+
+.modal-close {
+  float: right;
+  font-size: 200%;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.modal-body h2::after {
+  background-color: #fff;
+}
+
+
+.modal-body h3 {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.modal-body a {
+  text-decoration: none;
+  color: #fff;
+  padding-bottom: 3px;
+}
+
+.modal-box {
+  width: 70%;
+  margin: 5% auto;
+  padding: 5%;
+  border-radius: 10px;
+  position: relative;
+}
+
+/* CONTACT MODAL */
+
+.contact-modal-box {
+  background-color: #2980b9;
+  color: #fff;
+}
+
+.social-nav {
+  list-style: none;
+  margin: 0 auto;
+  width: fit-content;
+  /* background-color: red; */
+}
+
+.social-nav li {
+  display: inline-block;
+  font-size: 30px;
+  margin: 15px 15px;
+  transition: color 0.5s;
+}
+
+.social-nav li:hover {
+  color :#000;
+}
+
 /* ---------------------------- */
 /* HEADER */
 /* ---------------------------- */
@@ -85,21 +170,21 @@ h3 {
 header {
   height: 100vh;
   position: relative;
-  background-attachment: fixed;
 }
 
 .header-bg-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.863),rgba(0, 0, 0, 0)), url(img/bg.jpg);
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   width: 100%;
   height: 100%;
   position: absolute;
   z-index: 0;
 
   /* use this rules only for blur bg */
-  /* margin: -10px -10px -20px -10px; */
-  /* filter: blur(5px);
+  /* margin: -10px -10px -20px -10px;
+  filter: blur(5px);
   animation: blurred 2s; */
 }
 
@@ -272,4 +357,125 @@ header nav {
   font-size: 140%;
   animation-iteration-count: 3;
   animation-delay: 1s;
+}
+
+/* ---------------------------- */
+/* SERVICES */
+/* ---------------------------- */
+
+/* .section-services {
+  background: linear-gradient(#000, rgba(0, 0, 0, 0.397)) ,url(img/bg2.jpeg);
+  background-attachment: fixed;
+  color: #fff;
+} */
+
+.service-tabs {
+  overflow: hidden;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.service-tabs button {
+  background-color: inherit;
+  /* float: left; */
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 25px;
+  transition: 0.3s;
+  background-color: #f1f1f1;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 0 10px 10px 0;
+  border-radius: 10px;
+}
+
+.service-tabs button:hover {
+  background-color: #ddd;
+}
+
+
+.service-tabs button.active {
+  background-color: #ccc;
+}
+
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  /* border: 1px solid #ccc; */
+  border-top: none;
+  animation: fadeIn 1s;
+  height: 200px;
+}
+
+/* ---------------------------- */
+/* MAJOR-CLIENTS */
+/* ---------------------------- */
+
+.client-logos {
+  text-align: center;
+}
+
+.logo-container {
+  display: inline-block;
+  padding: 0;
+  position: relative;
+}
+
+.logo-container img {
+  box-shadow: 0 1px 15px rgba(209, 209, 209, 0.459);
+  height: 160px;
+  margin: 10px;
+  transition: box-shadow 0.6s, transform 0.4s;
+  border-radius: 10px;
+  background-color:#fff
+}
+
+.logo-container img:hover {
+  box-shadow: 0px 1px 20px rgba(138, 138, 138, 0.692);
+  transform: scale(1.15);
+  transition: box-shadow 1s, transform 0.7s;
+}
+
+
+/* ---------------------------- */
+/* FOOTER */
+/* ---------------------------- */
+
+footer {
+  padding: 50px 0;
+}
+
+footer hr {
+  border: 1px solid rgba(202, 202, 202, 0.842);
+  margin-bottom: 40px;
+}
+
+
+.social-nav-footer {
+  list-style: none;
+}
+
+.social-nav-footer li {
+  float:left;
+  margin-right: 30px;
+  font-size: 25px;
+  padding-top: 10px;
+  color: rgb(151, 151, 151);
+  transition: color 0.4s;
+}
+
+.social-nav-footer li:hover {
+  color: #000;
+}
+
+.text-footer {
+  /* font-weight: bold; */
+  float:right;
+  list-style: none;
+  text-align: right;
+}
+
+.text-footer li {
+  line-height: 140%;
 }

@@ -55,6 +55,14 @@
     top: 32px;
   }
 
+  .modal-body a {
+    border-bottom: 1px solid #fff;
+  }
+
+  .modal-box {
+    width: 90%;
+  }
+
 }
 
 /* small phones: 0 to 480px  */

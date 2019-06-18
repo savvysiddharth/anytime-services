@@ -14,6 +14,8 @@
 
   <link rel="stylesheet" href="resources/css/style.css">
   <link rel="stylesheet" href="resources/css/queries.css">
+
+  <script src="resources/js/main.js"></script>
 </head>
 <body>
   <header>
@@ -27,10 +29,9 @@
       <div class="row">
         <ul class="main-nav">
           <li><a href="#" class="active">Home</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Images</a></li>
-          <li><a href="#">Team</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#">About us</a></li>
+          <li><a id="nav-btn-services" href="#">Services</a></li>
+          <li><a id="nav-btn-client" href="#">Clients</a></li>
         </ul>
       </div>
     </nav>
@@ -54,23 +55,140 @@
         <span>Demolition</span>
         <span>Anchoring</span>
         <span>RCC Cutting</span>
-        <span>Scaffolding</span>
+        <span>Laser marking</span>
       </div>
       <br>
       <span class="text-for-you">for you.</span>
     </div>
     <div class="row">
-      <div class="hero-contact-btn animated pulse" style="width: fit-content">
-        <a class="btn btn-the-blue" href="#">Contact us now</a>
+      <div class="hero-contact-btn" style="width: fit-content">
+        <a id="contact-modal-btn" class="btn btn-the-blue" href="#">Contact us now</a>
+      </div>
+    </div>
+
+    <div id="contact-modal" class="modal">
+      <div class="modal-box contact-modal-box">
+        <div class="modal-header">
+          <i id="contact-modal-close-btn" class="modal-close ion-ios-close-empty"></i>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <h2>Call us on</h2>
+            <h3><a href="tel:9898423366">+91 9898423366</a></h3>
+            <h3><a href="tel:7567753376">+91 7567753376</a></h3>
+          </div>
+        </div>
+        <ul class="social-nav">
+          <li><i class="ion-social-facebook"></i></li>
+          <li><i class="ion-social-whatsapp"></i></li>
+          <li><i class="ion-social-instagram"></i></li>
+          <li><i class="ion-social-linkedin"></i></li>
+        </ul>
       </div>
     </div>
 
   </header>
 
   <section class="section-services">
+
     <h2>
-      Our services
+      Services
     </h2>
+
+    <div class="row">
+      <div class="service-tabs">
+        <button class="tablinks">RCC Core</button>
+        <button class="tablinks">RCC Cutting</button>
+        <button class="tablinks">Rebaring</button>
+        <button class="tablinks">Demolition</button>
+        <button class="tablinks">Anchoring</button>
+        <button class="tablinks">Laser Marking</button>
+      </div>
+    </div>
+
+    <div class="row tabcontent-container">
+      <div id="rcc-core" class="tabcontent">
+        <h3>RCC Core</h3>
+        <p>Core cutting (Diamond Drilling work)</p>
+        <p>Diameter: 25mm to 300mm</p>
+      </div>
+
+      <div id="rcc-cutting" class="tabcontent">
+        <h3>RCC Cutting</h3>
+        <p>RCC Road Groove Cutting Work</p>
+      </div>
+
+      <div id="rebaring" class="tabcontent">
+        <h3>Rebaring</h3>
+        <p>Heavy Duty Dowelling (Grouting)</p>
+        <p>Fischer & Hilti Chemical</p>
+      </div>
+
+      <div id="demolition" class="tabcontent">
+        <h3>Demolition</h3>
+        <p>RCC Breaking Services & Breaker</p>
+        <p>Machine Rental</p>
+      </div>
+
+      <div id="anchoring" class="tabcontent">
+        <h3>Anchoring</h3>
+        <p>Chemical & Mechanical</p>
+      </div>
+
+      <div id="laser-marking" class="tabcontent">
+        <h3>Laser Marking</h3>
+        <p>Name Plate, Number Plate</p>
+        <p>Jewellery & fashion Accessories</p>
+        <p>Die & Mould Engraving, 2D & 3D Die Engraving</p>
+        <p>Kitchenware (Spoon, Knife, Fork, Dish) & Hardware</p>
+      </div>
+    </div>
+
   </section>
+
+  <section class="section-clients">
+    <h2>
+      Our major clients
+    </h2>
+
+    <div class="row">
+      <div class="client-logos">
+        <div class="logo-container"><img style="padding:5px;" src="resources/img/client-logo/adani.png"></div>
+        <div class="logo-container"><img style="padding:9px;" src="resources/img/client-logo/iima.png"></div>
+        <div class="logo-container"><img style="padding:20px;" src="resources/img/client-logo/isro.png"></div>
+        <div class="logo-container"><img src="resources/img/client-logo/cera.jpg"></div>
+        <div class="logo-container"><img style="padding:18px;" src="resources/img/client-logo/scicity.jpg"></div>
+        <div class="logo-container"><img src="resources/img/client-logo/tataproj.jpg"></div>
+        <div class="logo-container"><img src="resources/img/client-logo/torrentpower.webp"></div>
+        <div class="logo-container"><img src="resources/img/client-logo/torrentpharma.webp"></div>
+        <div class="logo-container"><img src="resources/img/client-logo/mccain.png"></div>
+        <div class="logo-container"><img src="resources/img/client-logo/dharmadev.jpg"></div>
+        <div class="logo-container"><img src="resources/img/client-logo/caspia.png"></div>
+        <div class="logo-container"><img src="resources/img/client-logo/katira-construction-logo.jpg"></div>
+        <div class="logo-container"><img style="padding:10px;" src="resources/img/client-logo/aawaass.jpeg"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="row">
+      <hr>
+
+      <ul class="social-nav-footer">
+        <li><i class="ion-social-facebook"></i></li>
+        <li><i class="ion-social-whatsapp"></i></li>
+        <li><i class="ion-social-instagram"></i></li>
+        <li><i class="ion-social-linkedin"></i></li>
+      </ul>
+
+      <ul class="text-footer">
+        <li>+91 9898423366 (Ramesh Maurya)</li>
+        <li>+91 7567753376 (Rajesh Maurya)</li>
+        <li>Copyright &copy; 2019 Anytime Services</li>
+      </ul>
+
+
+    </div>
+  </footer>
 </body>
 </html>
