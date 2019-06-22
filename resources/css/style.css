@@ -2,7 +2,7 @@
 COLOR PALETTE
 the-blue: #409ad5
 dark-blue: #2980b9
- */
+*/
 
 /* ---------------------------- */
 /* BASIC SETUP */
@@ -64,8 +64,12 @@ h2::after {
 }
 
 h3 {
-  font-weight: 500;
-  font-size: 130%;
+  font-size: 140%;
+  margin-bottom: 10px;
+}
+
+p {
+  line-height: 145%;
 }
 
 /* BUTTONS */
@@ -76,7 +80,7 @@ h3 {
   padding: 10px 20px;
   text-decoration: none;
   font-weight: 600;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .btn-the-blue {
@@ -124,12 +128,6 @@ h3 {
   margin-bottom: 10px;
 }
 
-.modal-body a {
-  text-decoration: none;
-  color: #fff;
-  padding-bottom: 3px;
-}
-
 .modal-box {
   width: 70%;
   margin: 5% auto;
@@ -143,6 +141,23 @@ h3 {
 .contact-modal-box {
   background-color: #2980b9;
   color: #fff;
+}
+
+.contact-modal-box .modal-body {
+  text-align: center;
+}
+
+.contact-modal-box a {
+  text-decoration: none;
+  color: #fff;
+  padding-bottom: 3px;
+}
+
+.jd-logo img {
+  background-color: #fff;
+  border-radius: 10px;
+  width: 85px;
+  padding: 3px 7px;
 }
 
 .social-nav {
@@ -201,16 +216,18 @@ header {
 .hamburger-btn {
   position: absolute;
   top: 30px;
-  left: 4%; /* putting it same as row padding */
+  left: 3%; /* putting it same as row padding */
   color:white;
-  font-size: 350%;
+  font-size: 300%;
   position: fixed;
+  width: 45px;
+  height: 45px;
   z-index: 10;
   background-color: #9e9e9e70;
   line-height: 0px;
-  padding: 0px 7px;
+  padding: 2px 0px;
   text-align: center;
-  border-radius: 5px;
+  border-radius: 10px;
   display: none;
 }
 
@@ -244,13 +261,12 @@ header {
   color: rgb(78, 78, 78);
 }
 
-header nav {
+.main-nav-container {
   position: relative;
   z-index: 3;
 }
 
 .main-nav {
-  float: left;
   list-style: none;
   margin-top: 20px;
   letter-spacing: 3px;
@@ -260,7 +276,6 @@ header nav {
   display: inline-block;
   margin-right: 30px;
   text-transform: uppercase;
-  /* font-weight: bold; */
 }
 
 .main-nav li a:link,
@@ -381,31 +396,71 @@ header nav {
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 14px 25px;
-  transition: 0.3s;
+  padding: 14px 20px;
   background-color: #f1f1f1;
   font-weight: bold;
   letter-spacing: 2px;
-  margin: 0 10px 10px 0;
+  margin: 0 5px 10px 0;
   border-radius: 10px;
+  border: 2px solid transparent;
+  color: rgb(27, 27, 27);
+  transition: border 0.4s, color 0.4s;
 }
 
 .service-tabs button:hover {
-  background-color: #ddd;
+  border: 2px solid #409ad5;
+  color: #236d9d;
 }
 
 
 .service-tabs button.active {
-  background-color: #ccc;
+  background-color: #409ad5;
+  color: #fff;
 }
 
 .tabcontent {
   display: none;
-  padding: 6px 12px;
+  /* padding: 6px 12px; */
   /* border: 1px solid #ccc; */
   border-top: none;
   animation: fadeIn 1s;
   height: 200px;
+}
+
+.about-service-box {
+  text-align: center;
+  line-height: 145%;
+}
+
+.carousal{
+  height: 400px;
+}
+
+.carousal ul {
+  list-style:none;
+  position: relative;
+}
+
+.carousal .photo-container {
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+  height: 400px;
+  display: none;
+  animation: fadeIn 1s;
+  box-shadow: 0 1px 15px rgba(209, 209, 209, 0.459);
+}
+
+.carousal .photo-container.active {
+  display: block;
+}
+
+.carousal ul li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* ---------------------------- */
@@ -437,20 +492,48 @@ header nav {
   transition: box-shadow 1s, transform 0.7s;
 }
 
+/* ---------------------------- */
+/* MAP SECTION */
+/* ---------------------------- */
+
+.map-container {
+  width: 92%;
+  height: 400px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  box-shadow: 0 1px 15px rgba(209, 209, 209, 0.459);
+  transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.map-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 1px 20px rgba(138, 138, 138, 0.692);
+}
+
+.address-box {
+  text-align: center;
+}
+
+.address-box p {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 120%;
+}
 
 /* ---------------------------- */
 /* FOOTER */
 /* ---------------------------- */
 
 footer {
-  padding: 50px 0;
+  padding: 20px 0;
 }
 
 footer hr {
   border: 1px solid rgba(202, 202, 202, 0.842);
   margin-bottom: 40px;
 }
-
 
 .social-nav-footer {
   list-style: none;
@@ -478,4 +561,8 @@ footer hr {
 
 .text-footer li {
   line-height: 140%;
+}
+
+.jd-logo-footer img {
+  width: 65px;
 }

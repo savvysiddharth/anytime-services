@@ -18,7 +18,7 @@
   <script src="resources/js/main.js"></script>
 </head>
 <body>
-  <header>
+  <header id="temp-home">
     <div class="header-bg-image"></div>
 
     <div>
@@ -28,10 +28,10 @@
     <nav class="main-nav-container animated fadeInDown">
       <div class="row">
         <ul class="main-nav">
-          <li><a href="#" class="active">Home</a></li>
-          <li><a href="#">About us</a></li>
-          <li><a id="nav-btn-services" href="#">Services</a></li>
-          <li><a id="nav-btn-client" href="#">Clients</a></li>
+          <li><a href="#temp-home">Home</a></li>
+          <li><a id="nav-btn-services" href="#temp-service">Services</a></li>
+          <li><a id="nav-btn-client" href="#temp-clients">Clients</a></li>
+          <li><a id="nav-btn-client" href="#temp-map">Reach us</a></li>
         </ul>
       </div>
     </nav>
@@ -47,7 +47,7 @@
       </p>
     </div>
 
-    <div class="row rw-box animated fadeIn">
+    <div class="row rw-box">
       <span>We will do</span>
       <div class="rw-services">
         <span>RCC Core</span>
@@ -74,22 +74,27 @@
         <div class="modal-body">
           <div class="row">
             <h2>Call us on</h2>
+            <p>Ramesh Maurya</p>
             <h3><a href="tel:9898423366">+91 9898423366</a></h3>
+            <p>Rajesh Maurya</p>
             <h3><a href="tel:7567753376">+91 7567753376</a></h3>
           </div>
+          <ul class="social-nav">
+            <li><i class="ion-social-facebook"></i></li>
+            <li><i class="ion-social-whatsapp"></i></li>
+            <li><i class="ion-social-instagram"></i></li>
+            <li><i class="ion-social-linkedin"></i></li>
+          </ul>
+          <a target="_blank" class="jd-logo" href="https://www.justdial.com/Ahmedabad/Anytime-Services-Opposite-sneh-plaza-cross-road-Chandkheda/079PXX79-XX79-140105113150-N5L4_BZDET">
+            <img src="resources/img/jd-logo.png">
+          </a>
         </div>
-        <ul class="social-nav">
-          <li><i class="ion-social-facebook"></i></li>
-          <li><i class="ion-social-whatsapp"></i></li>
-          <li><i class="ion-social-instagram"></i></li>
-          <li><i class="ion-social-linkedin"></i></li>
-        </ul>
       </div>
     </div>
 
   </header>
 
-  <section class="section-services">
+  <section id="temp-service" class="section-services">
 
     <h2>
       Services
@@ -108,45 +113,137 @@
 
     <div class="row tabcontent-container">
       <div id="rcc-core" class="tabcontent">
-        <h3>RCC Core</h3>
-        <p>Core cutting (Diamond Drilling work)</p>
-        <p>Diameter: 25mm to 300mm</p>
+        <div class="row">
+          <div class="col span-1-of-2 img-service-box">
+
+            <div class="carousal">
+              <ul>
+                <li><div style="background-image: url(resources/img/rcc_core/1.jpg)" class="photo-container active"></div></li>
+                <li><div style="background-image: url(resources/img/rcc_core/2.jpg)" class="photo-container"></div></li>
+                <li><div style="background-image: url(resources/img/rcc_core/3.jpg)" class="photo-container"></div></li>
+                <li><div style="background-image: url(resources/img/rcc_core/4.jpg)" class="photo-container"></div></li>
+                <li><div style="background-image: url(resources/img/rcc_core/5.jpg)" class="photo-container"></div></li>
+              </ul>
+            </div>
+
+          </div>
+          <div class="col span-1-of-2 about-service-box">
+            <h3>RCC Core</h3>
+            <p>Core cutting (Diamond Drilling work)</p>
+            <p>Diameter: 25mm to 300mm</p>
+          </div>
+        </div>
       </div>
 
       <div id="rcc-cutting" class="tabcontent">
-        <h3>RCC Cutting</h3>
-        <p>RCC Road Groove Cutting Work</p>
+        <div class="row">
+          <div class="col span-1-of-2 img-service-box">
+
+            <div class="carousal">
+              <ul>
+                <li><div style="background-image: url(resources/img/rcc_cutting/1.jpg)" class="photo-container active"></div></li>
+                <li><div style="background-image: url(resources/img/rcc_cutting/2.jpg)" class="photo-container"></div></li>
+                <li><div style="background-image: url(resources/img/rcc_cutting/3.png)" class="photo-container"></div></li>
+              </ul>
+            </div>
+
+          </div>
+          <div class="col span-1-of-2 about-service-box">
+            <h3>RCC Cutting</h3>
+            <p>RCC Road Groove Cutting Work</p>
+          </div>
+        </div>
       </div>
 
       <div id="rebaring" class="tabcontent">
-        <h3>Rebaring</h3>
-        <p>Heavy Duty Dowelling (Grouting)</p>
-        <p>Fischer & Hilti Chemical</p>
+        <div class="row">
+          <div class="col span-1-of-2 img-service-box">
+
+            <div class="carousal">
+              <ul>
+                <li><div style="background-image: url(resources/img/rebaring/1.jpg)" class="photo-container active"></div></li>
+                <li><div style="background-image: url(resources/img/rebaring/2.jpg)" class="photo-container"></div></li>
+                <li><div style="background-image: url(resources/img/rebaring/3.jpg)" class="photo-container"></div></li>
+              </ul>
+            </div>
+
+          </div>
+          <div class="col span-1-of-2 about-service-box">
+            <h3>Rebaring</h3>
+            <p>Heavy Duty Dowelling (Grouting)</p>
+            <p>Fischer & Hilti Chemical</p>
+          </div>
+        </div>
       </div>
 
       <div id="demolition" class="tabcontent">
-        <h3>Demolition</h3>
-        <p>RCC Breaking Services & Breaker</p>
-        <p>Machine Rental</p>
+        <div class="row">
+          <div class="col span-1-of-2 img-service-box">
+
+            <div class="carousal">
+              <ul>
+                <li><div style="background-image: url(resources/img/demolition/1.jpg)" class="photo-container active"></div></li>
+                <li><div style="background-image: url(resources/img/demolition/2.jpg)" class="photo-container"></div></li>
+                <li><div style="background-image: url(resources/img/demolition/3.jpg)" class="photo-container"></div></li>
+              </ul>
+            </div>
+
+          </div>
+          <div class="col span-1-of-2 about-service-box">
+            <h3>Demolition</h3>
+            <p>RCC Breaking Services & Breaker</p>
+            <p>Machine Rental</p>
+          </div>
+        </div>
       </div>
 
       <div id="anchoring" class="tabcontent">
-        <h3>Anchoring</h3>
-        <p>Chemical & Mechanical</p>
+        <div class="row">
+          <div class="col span-1-of-2 img-service-box">
+
+            <div class="carousal">
+              <ul>
+                <li><div style="background-image: url(resources/img/anchoring/1.jpg)" class="photo-container active"></div></li>
+                <li><div style="background-image: url(resources/img/anchoring/2.jpg)" class="photo-container"></div></li>
+              </ul>
+            </div>
+
+          </div>
+          <div class="col span-1-of-2 about-service-box">
+            <h3>Anchoring</h3>
+            <p>Chemical & Mechanical</p>
+          </div>
+        </div>
       </div>
 
       <div id="laser-marking" class="tabcontent">
-        <h3>Laser Marking</h3>
-        <p>Name Plate, Number Plate</p>
-        <p>Jewellery & fashion Accessories</p>
-        <p>Die & Mould Engraving, 2D & 3D Die Engraving</p>
-        <p>Kitchenware (Spoon, Knife, Fork, Dish) & Hardware</p>
+        <div class="row">
+          <div class="col span-1-of-2 img-service-box">
+
+            <div class="carousal">
+              <ul>
+                <li><div style="background-image: url(resources/img/laser/1.jpg)" class="photo-container active"></div></li>
+                <li><div style="background-image: url(resources/img/laser/2.jpg)" class="photo-container"></div></li>
+                <li><div style="background-image: url(resources/img/laser/3.jpg)" class="photo-container"></div></li>
+                <li><div style="background-image: url(resources/img/laser/4.jpg)" class="photo-container"></div></li>
+              </ul>
+            </div>
+
+          </div>
+          <div class="col span-1-of-2 about-service-box">
+            <h3>Laser Marking</h3>
+            <p>Name Plate, Number Plate</p>
+            <p>Jewellery & fashion Accessories</p>
+            <p>Die & Mould Engraving, 2D & 3D Die Engraving</p>
+            <p>Kitchenware (Spoon, Knife, Fork, Dish) & Hardware</p>
+          </div>
+        </div>
       </div>
     </div>
 
   </section>
 
-  <section class="section-clients">
+  <section id="temp-clients" class="section-clients">
     <h2>
       Our major clients
     </h2>
@@ -170,6 +267,21 @@
     </div>
   </section>
 
+  <section id="temp-map" class="section-map">
+    <h2>
+      Reach us
+    </h2>
+    <a target="_blank"  href="https://www.google.com/maps/place/Anytime+services/@23.1189245,72.5791101,17z/data=!3m1!4b1!4m5!3m4!1s0x395e824fb7081adb:0x8e5c3663367dd6da!8m2!3d23.1189196!4d72.5812988">
+      <div style="background-image: url(resources/img/map.png)" class="row map-container" title="Click to open the map in new tab" ></div>
+    </a>
+    <div class="row address-box">
+      <h3>Address</h3>
+      <p>
+        143, Highway Mall, Nr. Satyamev Hospital, Chandkheda, Ahmedabad-382424
+      </p>
+    </div>
+  </section>
+
   <footer>
     <div class="row">
       <hr>
@@ -179,6 +291,9 @@
         <li><i class="ion-social-whatsapp"></i></li>
         <li><i class="ion-social-instagram"></i></li>
         <li><i class="ion-social-linkedin"></i></li>
+        <li class="jd-logo-footer">
+          <a target="_blank" href="https://www.justdial.com/Ahmedabad/Anytime-Services-Opposite-sneh-plaza-cross-road-Chandkheda/079PXX79-XX79-140105113150-N5L4_BZDET"><img src="resources/img/jd-logo.png"></a>
+        </li>
       </ul>
 
       <ul class="text-footer">
@@ -186,7 +301,6 @@
         <li>+91 7567753376 (Rajesh Maurya)</li>
         <li>Copyright &copy; 2019 Anytime Services</li>
       </ul>
-
 
     </div>
   </footer>

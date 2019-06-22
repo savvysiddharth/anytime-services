@@ -106,11 +106,75 @@ function initDynamicComponents() {
     tabButtons[0].click(); //force clicking open first tab
   }
 
+  function initiateSlideShows() {
+    function slideShow(carousal) {
+      const imageArray = Array.from(carousal.querySelectorAll('.photo-container'));
+      for(let i=0; i<imageArray.length ; i++) {
+        const isItActive = Array.from(imageArray[i].classList).includes('active');
+        if(isItActive) {
+          imageArray[i].classList.remove('active');
+          if(++i < imageArray.length) { //check next index
+            imageArray[i].classList.add('active');
+          } else {
+            imageArray[0].classList.add('active');
+          }
+          break;
+        }
+      }
+    }
+  
+    const carousals = document.querySelectorAll('.carousal');
+
+    for(let i = 0 ; i < carousals.length ; i++) {
+      setInterval(()=> {
+        slideShow(carousals[i])
+      }, 3000);
+    }
+  }
+
+  function addEventListenersForHamburger() {
+    const hamburger = document.querySelector('.hamburger-btn');
+    const navBox = document.querySelector('.main-nav-container');
+
+    function closeNav() {
+      navBox.style.right = '-100%';
+      hamburger.innerHTML = '<i class="ion-navicon"></i>';
+    }
+
+    function openNav() {
+      navBox.style.right = '0';
+      hamburger.innerHTML = '<i class="ion-ios-close-empty"></i>';
+      hamburger.children[0].style.transform = 'scale(0.5)';
+    }
+
+    hamburger.addEventListener('click', ()=> {
+      if(navBox.getBoundingClientRect().left == 0) {
+        closeNav();
+      } else {
+        openNav();
+      }
+    });
+
+    const width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+
+    if (width <= 767) {
+      const navItems = Array.from(document.querySelector('.main-nav').children);
+      for(let i in navItems) {
+        navItems[i].addEventListener('click',() => {
+          closeNav();
+        });
+      }
+    }
+  }
+
   addEventListenersForModals();
-  addEventListenersForSmoothScrolls();
+  // addEventListenersForSmoothScrolls();
   addEventListenerForTabs();
+  initiateSlideShows();
+  addEventListenersForHamburger();
 }
 
 window.onload = function() {
   initDynamicComponents();
 };
+
