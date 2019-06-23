@@ -126,6 +126,17 @@
 
   }
 
+  /* MAP */
+
+  .map-container:hover {
+    transform: none;
+    box-shadow: 0 1px 15px rgba(209, 209, 209, 0.459);
+  }
+
+  .map-container:hover:after {
+    display: none;
+  }
+
   /* FOOTER ADJUSTMENTS */
 
   .social-nav-footer {
@@ -136,6 +147,7 @@
   .social-nav-footer li {
     float: none;
     display: inline-block;
+    margin: 0 10px;
   }
 
   .text-footer {

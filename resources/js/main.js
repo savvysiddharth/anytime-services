@@ -144,7 +144,6 @@ function initDynamicComponents() {
     function openNav() {
       navBox.style.right = '0';
       hamburger.innerHTML = '<i class="ion-ios-close-empty"></i>';
-      hamburger.children[0].style.transform = 'scale(0.5)';
     }
 
     hamburger.addEventListener('click', ()=> {
@@ -155,6 +154,7 @@ function initDynamicComponents() {
       }
     });
 
+    // Close nav when one of nav item is tapped
     const width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 
     if (width <= 767) {
@@ -174,7 +174,15 @@ function initDynamicComponents() {
   addEventListenersForHamburger();
 }
 
+function loadingFinished() {
+  const loader = document.querySelector('.loader-container');
+  loader.style.animation = 'fadeOut 1s';
+  setTimeout(()=> {
+    loader.style.display = 'none';
+  }, 800);
+}
+
 window.onload = function() {
   initDynamicComponents();
+  loadingFinished();
 };
-
