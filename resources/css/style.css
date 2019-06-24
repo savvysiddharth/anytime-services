@@ -307,12 +307,32 @@ header {
   display: none;
 }
 
-.hamburger-btn i {
-  /* background-color: red; */
+.hamburger {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top:50%;
+  left:50%;
   transform: translate(-50%,-50%);
+}
+
+.hamburger .line{
+  width: 20px;
+  height: 2px;
+  background-color: #ecf0f1;
+  display: block;
+  margin: 6px 0;
+  transition: all 0.4s ease-in-out;
+}
+
+#hamburger-1.is-active .line:nth-child(2){
+  opacity: 0;
+}
+
+#hamburger-1.is-active .line:nth-child(1){
+  transform: translateY(8px) rotate(45deg);
+}
+
+#hamburger-1.is-active .line:nth-child(3){
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 .diag-cut {

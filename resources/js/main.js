@@ -98,20 +98,21 @@ function initDynamicComponents() {
   }
 
   function addEventListenersForHamburger() {
-    const hamburger = document.querySelector('.hamburger-btn');
+    const hamburgerContainer = document.querySelector('.hamburger-btn');
+    const hamburger = document.querySelector('.hamburger');
     const navBox = document.querySelector('.main-nav-container');
 
     function closeNav() {
       navBox.style.right = '-100%';
-      hamburger.innerHTML = '<i class="ion-navicon"></i>';
+      hamburger.classList.toggle('is-active');
     }
 
     function openNav() {
       navBox.style.right = '0';
-      hamburger.innerHTML = '<i class="ion-ios-close-empty"></i>';
+      hamburger.classList.toggle('is-active');
     }
 
-    hamburger.addEventListener('click', ()=> {
+    hamburgerContainer.addEventListener('click', ()=> {
       if(navBox.getBoundingClientRect().left == 0) {
         closeNav();
       } else {
