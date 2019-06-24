@@ -150,8 +150,6 @@ function initDynamicComponents() {
       }
 
       window.addEventListener('scroll', scrollFunction);
-
-      toTopBtn.addEventListener('click', topFunction);
     }
   }
 
