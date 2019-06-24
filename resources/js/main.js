@@ -1,5 +1,7 @@
 function initDynamicComponents() {
 
+  const width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+
   function addEventListenersForModals() {
 
     // Common functions for all modal
@@ -11,7 +13,7 @@ function initDynamicComponents() {
       modal.style.animation = 'fadeOut 0.5s';
       setTimeout(()=> {
         modal.style.display = 'none';
-        modal.style.animation = 'fadeIn 1s';
+        modal.style.animation = 'fadeIn 0.6s';
       }, 400);
     }
 
@@ -35,43 +37,6 @@ function initDynamicComponents() {
     }
 
     forContactModal();
-  }
-
-  function addEventListenersForSmoothScrolls() {
-
-    function smoothScroll(target, duration) {
-      target = document.querySelector(target);
-      let targetPosition = target.getBoundingClientRect().top;
-      let startPosition = window.pageYOffset;
-      let distance = targetPosition - startPosition;
-      let startTime = null;
-
-      function animation(currentTime) {
-        if(startTime === null) startTime = currentTime;
-        let timeElapsed = currentTime - startTime;
-        let run = ease(timeElapsed, startPosition, distance, duration);
-        window.scrollTo(0, run);
-        if(timeElapsed < duration) requestAnimationFrame(animation);
-      }
-
-      function ease(t, b, c, d) {
-        t /= d / 2;
-        if(t < 1) return c / 2 * t * t + b;
-        t--;
-        return -c / 2 * ( t * (t - 2) - 1) + b;
-      }
-
-      requestAnimationFrame(animation);
-    }
-
-    document.querySelector('#nav-btn-client').addEventListener('click', () => {
-      smoothScroll('.section-clients', 1000);
-    });
-
-    document.querySelector('#nav-btn-services').addEventListener('click', ()=> {
-      smoothScroll('.section-services', 1000);
-    });
-
   }
 
   function addEventListenerForTabs() {
@@ -155,7 +120,6 @@ function initDynamicComponents() {
     });
 
     // Close nav when one of nav item is tapped
-    const width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 
     if (width <= 767) {
       const navItems = Array.from(document.querySelector('.main-nav').children);
@@ -167,11 +131,34 @@ function initDynamicComponents() {
     }
   }
 
+  function addBackToTopButton() {
+    if(width > 767) {
+      const toTopBtn = document.querySelector("#back-to-top");
+
+      function scrollFunction() {
+        if (document.body.scrollTop > window.innerHeight - 20 || document.documentElement.scrollTop > window.innerHeight - 10) {
+          toTopBtn.style.display = "block";
+        } else {
+          toTopBtn.style.display = 'none';
+        }
+      }
+
+      function topFunction() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      }
+
+      window.addEventListener('scroll', scrollFunction);
+
+      toTopBtn.addEventListener('click', topFunction);
+    }
+  }
+
   addEventListenersForModals();
-  // addEventListenersForSmoothScrolls();
   addEventListenerForTabs();
   initiateSlideShows();
   addEventListenersForHamburger();
+  addBackToTopButton();
 }
 
 function loadingFinished() {

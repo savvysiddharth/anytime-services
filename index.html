@@ -21,13 +21,13 @@
   <link rel="stylesheet" href="vendors/css/normalize.css">
   <link rel="stylesheet" href="vendors/css/grid.css"> <!-- responsive grid system -->
   <link rel="stylesheet" href="vendors/css/geo-sans.css">
-  <link rel="stylesheet" href="vendors/css/ionicons.min.css">
-  <link rel="stylesheet" href="vendors/css/animate.css">
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
-  <link rel="stylesheet" href="resources/css/style.css?v=0.21">
-  <link rel="stylesheet" href="resources/css/queries.css?v=0.21">
+  <link rel="stylesheet" href="resources/css/style.css?v=0.22">
+  <link rel="stylesheet" href="resources/css/queries.css?v=0.22">
 
-  <script src="resources/js/main.js?v=0.21"></script>
+  <script src="resources/js/main.js?v=0.22"></script>
 </head>
 <body>
 
@@ -37,20 +37,30 @@
     </div>
   </div>
 
+  <div title="Go back to top" id="back-to-top">
+    <i class="ion-chevron-up"></i>
+  </div>
+
   <header id="temp-home">
     <div class="header-bg-image"></div>
 
-    <div>
-      <a class="hamburger-btn animated fadeInDown"><i class="ion-navicon"></i></a>
-    </div>
+    <a class="hamburger-btn animated fadeInDown"><i class="ion-navicon"></i></a>
+
+    <!-- <a class="hamburger-btn animated fadeInDown">
+      <div class="hamburger" id="hamburger-1">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </a> -->
 
     <nav class="main-nav-container animated fadeInDown">
       <div class="row">
         <ul class="main-nav">
-          <li><a href="#temp-home">Home</a></li>
-          <li><a id="nav-btn-services" href="#temp-service">Services</a></li>
-          <li><a id="nav-btn-client" href="#temp-clients">Clients</a></li>
-          <li><a id="nav-btn-client" href="#temp-map">Reach us</a></li>
+          <li><a href="#temp-home"><i class="ion-ios-home-outline"></i> Home</a></li>
+          <li><a id="nav-btn-services" href="#temp-service"><i class="ion-ios-list-outline"></i> Services</a></li>
+          <li><a id="nav-btn-client" href="#temp-clients"><i class="ion-ios-people-outline"></i> Clients</a></li>
+          <li><a id="nav-btn-client" href="#temp-map"><i class="ion-ios-location-outline"></i> Reach us</a></li>
         </ul>
       </div>
     </nav>
@@ -81,7 +91,7 @@
     </div>
     <div class="row">
       <div class="hero-contact-btn" style="width: fit-content">
-        <a id="contact-modal-btn" class="btn btn-the-blue" href="#">Contact us now</a>
+        <a id="contact-modal-btn" class="btn btn-the-blue" href="#"><i class="ion-android-people"></i> Contact us now</a>
       </div>
     </div>
 
@@ -92,10 +102,10 @@
         </div>
         <div class="modal-body">
           <div class="row">
-            <h2>Call us on</h2>
-            <p>Ramesh Maurya</p>
+            <h2>Contact us on</h2>
+            <p><i class="ion-ios-telephone"></i> Ramesh Maurya</p>
             <h3><a href="tel:9898423366">+91 9898423366</a></h3>
-            <p>Rajesh Maurya</p>
+            <p><i class="ion-ios-telephone"></i> Rajesh Maurya</p>
             <h3><a href="tel:7567753376">+91 7567753376</a></h3>
           </div>
           <ul class="social-nav">
@@ -107,6 +117,7 @@
           <a target="_blank" class="jd-logo" href="https://www.justdial.com/Ahmedabad/Anytime-Services-Opposite-sneh-plaza-cross-road-Chandkheda/079PXX79-XX79-140105113150-N5L4_BZDET">
             <img src="resources/img/jd-logo.png">
           </a>
+          <h3><i class="ion-ios-email"></i> <a href="mailto:contact@anytimeservices.net">contact@anytimeservices.net</a></h3>
         </div>
       </div>
     </div>
@@ -116,7 +127,7 @@
   <section id="temp-service" class="section-services">
 
     <h2>
-      Services
+      <i class="ion-ios-list-outline"></i> Services
     </h2>
 
     <div class="row">
@@ -264,7 +275,7 @@
 
   <section id="temp-clients" class="section-clients">
     <h2>
-      Our major clients
+      <i class="ion-ios-people-outline"></i> Our major clients
     </h2>
 
     <div class="row">
@@ -288,13 +299,17 @@
 
   <section id="temp-map" class="section-map">
     <h2>
-      Reach us
+      <i class="ion-ios-location-outline"></i> Reach us
     </h2>
-    <a target="_blank"  href="https://www.google.com/maps/place/Anytime+services/@23.1189245,72.5791101,17z/data=!3m1!4b1!4m5!3m4!1s0x395e824fb7081adb:0x8e5c3663367dd6da!8m2!3d23.1189196!4d72.5812988">
-      <div style="background-image: url(resources/img/map.png)" class="row map-container" title="Click to open the map in new tab" ></div>
-    </a>
+
+    <div class="row">
+      <a target="_blank"  href="https://www.google.com/maps/place/Anytime+services/@23.1189245,72.5791101,17z/data=!3m1!4b1!4m5!3m4!1s0x395e824fb7081adb:0x8e5c3663367dd6da!8m2!3d23.1189196!4d72.5812988">
+        <div style="background-image: url(resources/img/map.png)" class="map-container" title="Click to open the map in new tab"></div>
+      </a>
+    </div>
+
     <div class="row address-box">
-      <h3>Address</h3>
+      <h3><i class="ion-ios-location"></i> Address</h3>
       <p>
         143, Highway Mall,<br>
         Nr. Satyamev Hospital,<br>
@@ -319,8 +334,9 @@
       </ul>
 
       <ul class="text-footer">
-        <li>+91 9898423366 (Ramesh Maurya)</li>
-        <li>+91 7567753376 (Rajesh Maurya)</li>
+        <li><a href="tel:9898423366">+91 9898423366 (Ramesh Maurya)</a> <i class="ion-ios-telephone"></i></li>
+        <li><a href="tel:7567753376">+91 7567753376 (Rajesh Maurya)</a> <i class="ion-ios-telephone"></i></li>
+        <li><a href="mailto:contact@anytimeservices.net">contact@anytimeservices.net</a> <i class="ion-ios-email"></i></li>
         <li>Copyright &copy; 2019 Anytime Services</li>
       </ul>
 
