@@ -68,7 +68,7 @@ function initDynamicComponents() {
       });
     }
 
-    tabButtons[0].click(); //force clicking open first tab
+    tabButtons[0].click(); //force clicking open first tab initially
   }
 
   function initiateSlideShows() {
