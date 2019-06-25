@@ -121,7 +121,6 @@ function initDynamicComponents() {
     });
 
     // Close nav when one of nav item is tapped
-
     if (width <= 767) {
       const navItems = Array.from(document.querySelector('.main-nav').children);
       for(let i in navItems) {

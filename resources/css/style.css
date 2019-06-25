@@ -11,7 +11,8 @@ dark-blue: #2980b9
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html,body {
@@ -87,6 +88,7 @@ p {
 
 .btn-the-blue {
   background-color: #2980b9;
+  -webkit-transition: background-color 0.5s;
   transition: background-color 0.5s;
 }
 
@@ -105,7 +107,8 @@ p {
   height: 100%;
   width: 100%;
   background: rgba(0, 0, 0, 0.733);
-  animation: fadeIn 0.5s;
+  -webkit-animation: fadeIn 0.5s;
+          animation: fadeIn 0.5s;
   overflow: auto;
 }
 
@@ -165,6 +168,8 @@ p {
 .social-nav {
   list-style: none;
   margin: 0 auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   /* background-color: red; */
 }
@@ -173,6 +178,7 @@ p {
   display: inline-block;
   font-size: 30px;
   margin: 15px 15px;
+  -webkit-transition: color 0.5s;
   transition: color 0.5s;
 }
 
@@ -196,7 +202,8 @@ p {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .lds-ripple {
@@ -210,10 +217,28 @@ p {
   border: 4px solid #fff;
   opacity: 1;
   border-radius: 50%;
-  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  -webkit-animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+          animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
 }
 .lds-ripple div:nth-child(2) {
-  animation-delay: -0.5s;
+  -webkit-animation-delay: -0.5s;
+          animation-delay: -0.5s;
+}
+@-webkit-keyframes lds-ripple {
+  0% {
+    top: 28px;
+    left: 28px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: -1px;
+    left: -1px;
+    width: 58px;
+    height: 58px;
+    opacity: 0;
+  }
 }
 @keyframes lds-ripple {
   0% {
@@ -243,7 +268,8 @@ p {
   background-color: #4099d5a9;
   border-radius: 50%;
   cursor: pointer;
-  animation: bounceInDown 0.6s;
+  -webkit-animation: bounceInDown 0.6s;
+          animation: bounceInDown 0.6s;
   color: #fff;
 }
 
@@ -251,7 +277,8 @@ p {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
 }
 
 
@@ -266,6 +293,7 @@ header {
 }
 
 .header-bg-image {
+  background-image: -webkit-gradient(linear,left top, left bottom,from(rgba(0, 0, 0, 0.863)),to(rgba(0, 0, 0, 0))), url(img/bg.jpg);
   background-image: linear-gradient(rgba(0, 0, 0, 0.863),rgba(0, 0, 0, 0)), url(img/bg.jpg);
   background-size: cover;
   background-position: center;
@@ -281,13 +309,27 @@ header {
   animation: blurred 2s; */
 }
 
-@keyframes blurred {
+@-webkit-keyframes blurred {
   0% {
-    filter: blur(0);
+    -webkit-filter: blur(0);
+            filter: blur(0);
   }
 
   100% {
-    filter: blur(5px);
+    -webkit-filter: blur(5px);
+            filter: blur(5px);
+  }
+}
+
+@keyframes blurred {
+  0% {
+    -webkit-filter: blur(0);
+            filter: blur(0);
+  }
+
+  100% {
+    -webkit-filter: blur(5px);
+            filter: blur(5px);
   }
 }
 
@@ -301,7 +343,7 @@ header {
   width: 45px;
   height: 45px;
   z-index: 4;
-  background-color: #9e9e9e70;
+  background-color: #85858573;
   line-height: 0px;
   padding:0px;
   border-radius: 10px;
@@ -312,7 +354,8 @@ header {
   position: absolute;
   top:50%;
   left:50%;
-  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
 }
 
 .hamburger .line{
@@ -321,19 +364,24 @@ header {
   background-color: #ecf0f1;
   display: block;
   margin: 6px 0;
+  -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
 
 #hamburger-1.is-active .line:nth-child(2){
+  -webkit-transform: translateX(-20px);
+          transform: translateX(-20px);
   opacity: 0;
 }
 
 #hamburger-1.is-active .line:nth-child(1){
-  transform: translateY(8px) rotate(45deg);
+  -webkit-transform: translateY(8px) rotate(45deg);
+          transform: translateY(8px) rotate(45deg);
 }
 
 #hamburger-1.is-active .line:nth-child(3){
-  transform: translateY(-8px) rotate(-45deg);
+  -webkit-transform: translateY(-8px) rotate(-45deg);
+          transform: translateY(-8px) rotate(-45deg);
 }
 
 .diag-cut {
@@ -377,6 +425,7 @@ header {
 }
 
 .main-nav li {
+  -webkit-tap-highlight-color: transparent;
   display: inline-block;
   margin-right: 30px;
   text-transform: uppercase;
@@ -387,6 +436,7 @@ header {
   text-decoration: none;
   color:#fff;
   border-top: 3px solid transparent;
+  -webkit-transition: color 0.4s, border-top 1s;
   transition: color 0.4s, border-top 1s;
   padding-top: 5px;
 }
@@ -396,6 +446,7 @@ header {
   color: #409ad5;
   position: relative;
   border-top: 3px solid #409ad5;
+  -webkit-transition: border-top 0.5s;
   transition: border-top 0.5s;
 }
 
@@ -420,8 +471,41 @@ header {
   text-align: center;
   position: absolute;
   top: 42px;
-  animation: fadeInOut 18s linear infinite;
+  -webkit-animation: fadeInOut 18s linear infinite;
+          animation: fadeInOut 18s linear infinite;
   opacity: 0;
+}
+
+@-webkit-keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  2% {
+    opacity: 0;
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+	5% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  17% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+	20% {
+    opacity: 0;
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
+  }
+	80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes fadeInOut {
@@ -430,19 +514,23 @@ header {
   }
   2% {
     opacity: 0;
-    transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
   }
 	5% {
     opacity: 1;
-    transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
   }
   17% {
     opacity: 1;
-    transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
   }
 	20% {
     opacity: 0;
-    transform: translateY(30px);
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
   }
 	80% {
     opacity: 0;
@@ -453,28 +541,36 @@ header {
 }
 
 .rw-services span:nth-child(1) {
-  animation-delay: 0s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
 }
 .rw-services span:nth-child(2) {
-  animation-delay: 3s;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
 }
 .rw-services span:nth-child(3) {
-  animation-delay: 6s;
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
 }
 .rw-services span:nth-child(4) {
-  animation-delay: 9s;
+  -webkit-animation-delay: 9s;
+          animation-delay: 9s;
 }
 .rw-services span:nth-child(5) {
-  animation-delay: 12s;
+  -webkit-animation-delay: 12s;
+          animation-delay: 12s;
 }
 .rw-services span:nth-child(6) {
-  animation-delay: 15s;
+  -webkit-animation-delay: 15s;
+          animation-delay: 15s;
 }
 
 .hero-contact-btn {
   font-size: 140%;
-  animation-iteration-count: 3;
-  animation-delay: 1s;
+  -webkit-animation-iteration-count: 3;
+          animation-iteration-count: 3;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
 }
 
 /* ---------------------------- */
@@ -488,8 +584,7 @@ header {
 }
 
 .service-tabs button {
-  background-color: inherit;
-  /* float: left; */
+  -webkit-tap-highlight-color: transparent;
   border: none;
   outline: none;
   cursor: pointer;
@@ -501,6 +596,7 @@ header {
   border-radius: 10px;
   border: 2px solid transparent;
   color: rgb(27, 27, 27);
+  -webkit-transition: border 0.4s, color 0.4s;
   transition: border 0.4s, color 0.4s;
 }
 
@@ -520,7 +616,8 @@ header {
   /* padding: 6px 12px; */
   /* border: 1px solid #ccc; */
   border-top: none;
-  animation: fadeIn 1s;
+  -webkit-animation: fadeIn 1s;
+          animation: fadeIn 1s;
   height: 200px;
 }
 
@@ -539,14 +636,17 @@ header {
 }
 
 .carousal .photo-container {
+  width: 100%;
   background-color: rgb(204, 204, 204);
   background-position: center;
   background-size: cover;
   border-radius: 10px;
   height: 100%;
   display: none;
-  animation: fadeIn 1s;
-  box-shadow: 0 1px 15px rgba(209, 209, 209, 0.459);
+  -webkit-animation: fadeIn 1s;
+          animation: fadeIn 1s;
+  -webkit-box-shadow: 0 1px 15px rgba(209, 209, 209, 0.459);
+          box-shadow: 0 1px 15px rgba(209, 209, 209, 0.459);
 }
 
 .carousal .photo-container.active {
@@ -576,18 +676,27 @@ header {
 }
 
 .logo-container img {
-  box-shadow: 0 1px 15px rgba(209, 209, 209, 0.459);
+  -webkit-box-shadow: 0 1px 15px rgba(209, 209, 209, 0.459);
+          box-shadow: 0 1px 15px rgba(209, 209, 209, 0.459);
   height: 160px;
   margin: 10px;
+  -webkit-transition: -webkit-box-shadow 0.6s, -webkit-transform 0.4s;
+  transition: -webkit-box-shadow 0.6s, -webkit-transform 0.4s;
   transition: box-shadow 0.6s, transform 0.4s;
+  transition: box-shadow 0.6s, transform 0.4s, -webkit-box-shadow 0.6s, -webkit-transform 0.4s;
   border-radius: 10px;
   background-color:#fff
 }
 
 .logo-container img:hover {
-  box-shadow: 0px 1px 20px rgba(138, 138, 138, 0.692);
-  transform: scale(1.15);
+  -webkit-box-shadow: 0px 1px 20px rgba(138, 138, 138, 0.692);
+          box-shadow: 0px 1px 20px rgba(138, 138, 138, 0.692);
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+  -webkit-transition: -webkit-box-shadow 1s, -webkit-transform 0.7s;
+  transition: -webkit-box-shadow 1s, -webkit-transform 0.7s;
   transition: box-shadow 1s, transform 0.7s;
+  transition: box-shadow 1s, transform 0.7s, -webkit-box-shadow 1s, -webkit-transform 0.7s;
 }
 
 /* ---------------------------- */
@@ -601,13 +710,19 @@ header {
   background-size: cover;
   border-radius: 10px;
   margin-bottom: 40px;
-  box-shadow: 0 1px 15px rgba(209, 209, 209, 0.459);
+  -webkit-box-shadow: 0 1px 15px rgba(209, 209, 209, 0.459);
+          box-shadow: 0 1px 15px rgba(209, 209, 209, 0.459);
+  -webkit-transition: -webkit-transform 0.5s, -webkit-box-shadow 0.5s;
+  transition: -webkit-transform 0.5s, -webkit-box-shadow 0.5s;
   transition: transform 0.5s, box-shadow 0.5s;
+  transition: transform 0.5s, box-shadow 0.5s, -webkit-transform 0.5s, -webkit-box-shadow 0.5s;
 }
 
 .map-container:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 1px 20px rgba(138, 138, 138, 0.692);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-box-shadow: 0px 1px 20px rgba(138, 138, 138, 0.692);
+          box-shadow: 0px 1px 20px rgba(138, 138, 138, 0.692);
 }
 
 .map-container:hover:after {
@@ -621,7 +736,8 @@ header {
   position: absolute;
   top:5%;
   left:2%;
-  animation: fadeIn 0.5s;
+  -webkit-animation: fadeIn 0.5s;
+          animation: fadeIn 0.5s;
 }
 
 .address-box {
@@ -657,6 +773,7 @@ footer hr {
   font-size: 25px;
   padding-top: 10px;
   color: rgb(151, 151, 151);
+  -webkit-transition: color 0.4s;
   transition: color 0.4s;
 }
 
