@@ -1,6 +1,7 @@
 function initDynamicComponents() {
 
   const width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+  const navBox = document.querySelector('.main-nav-container');
 
   function addEventListenersForModals() {
 
@@ -100,7 +101,6 @@ function initDynamicComponents() {
   function addEventListenersForHamburger() {
     const hamburgerContainer = document.querySelector('.hamburger-btn');
     const hamburger = document.querySelector('.hamburger');
-    const navBox = document.querySelector('.main-nav-container');
 
     function closeNav() {
       navBox.style.right = '-100%';
@@ -131,21 +131,15 @@ function initDynamicComponents() {
     }
   }
 
-  function addBackToTopButton() {
+  function addStickyNav() {
     if(width > 767) {
-      const toTopBtn = document.querySelector("#back-to-top");
 
       function scrollFunction() {
-        if (document.body.scrollTop > window.innerHeight - 20 || document.documentElement.scrollTop > window.innerHeight - 10) {
-          toTopBtn.style.display = "block";
+        if (document.body.scrollTop > window.innerHeight - 20 || document.documentElement.scrollTop > window.innerHeight - 20) {
+          navBox.classList.add('sticky-nav');
         } else {
-          toTopBtn.style.display = 'none';
+          navBox.classList.remove('sticky-nav');
         }
-      }
-
-      function topFunction() {
-        document.body.scrollTop = 0; // For Safari
-        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
       }
 
       window.addEventListener('scroll', scrollFunction);
@@ -156,7 +150,7 @@ function initDynamicComponents() {
   addEventListenerForTabs();
   initiateSlideShows();
   addEventListenersForHamburger();
-  addBackToTopButton();
+  addStickyNav();
 }
 
 function loadingFinished() {

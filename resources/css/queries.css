@@ -26,6 +26,10 @@
     font-size: 230%;
   }
 
+  section {
+    padding: 20px 0 200px 0;
+  }
+
   .btn {
     padding: 8px 10px;
   }
