@@ -3,6 +3,10 @@
   .row {
     padding: 0 3%;
   }
+
+  .sticky-nav ul {
+    margin-left: 50px;
+  }
 }
 
 /* small tablets to big tablets: 768 - 1023 */
