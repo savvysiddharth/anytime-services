@@ -27,11 +27,14 @@ function initDynamicComponents() {
     }
 
     function forContactModal() {
-      const contactBtn = document.querySelector('#contact-modal-btn');
+      const contactBtns = document.querySelectorAll('.contact-modal-btn');
       const contactModal = document.querySelector('#contact-modal');
       const closeBtn = document.querySelector('#contact-modal-close-btn');
 
-      contactBtn.addEventListener('click', () => openModal(contactModal));
+      for(btn of contactBtns) {
+        btn.addEventListener('click', () => openModal(contactModal));
+      }
+
       closeBtn.addEventListener('click', () => closeModal(contactModal));
 
       document.body.addEventListener('click', () => closeModalOnBackgroundClick(contactModal) );
@@ -88,9 +91,10 @@ function initDynamicComponents() {
         }
       }
     }
-  
+
     const carousals = document.querySelectorAll('.carousal');
 
+    // add interval for all carousals
     for(let i = 0 ; i < carousals.length ; i++) {
       setInterval(()=> {
         slideShow(carousals[i])
@@ -144,6 +148,12 @@ function initDynamicComponents() {
 
       window.addEventListener('scroll', scrollFunction);
     }
+  }
+
+  function fetchImages() {
+    const count = 6;
+    const url = "https://api.instagram.com/v1/users/self/media/recent/?access_token=15455632614.5d920c2.e349afc3967d46d3835912174daec263&count="+count;
+
   }
 
   addEventListenersForModals();
