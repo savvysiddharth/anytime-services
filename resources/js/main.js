@@ -154,6 +154,37 @@ function initDynamicComponents() {
     const count = 6;
     const url = "https://api.instagram.com/v1/users/self/media/recent/?access_token=15455632614.5d920c2.e349afc3967d46d3835912174daec263&count="+count;
 
+    const gallery = document.querySelector('.gallery-container');
+
+    fetch(url)
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(res) {
+      console.log(res);
+      const resItems = res.data;
+      for(const item of resItems) {
+        let container;
+        if(item.type === "image") {
+          container = document.createElement("img");
+          container.src = item.images.standard_resolution.url;
+        } else if(item.type === "video") {
+          container = document.createElement("video");
+          const source = document.createElement("source");
+          source.src = item.videos.low_resolution.url;
+          container.autoplay = "true";
+          container.loop = "true";
+          container.contains = "true";
+          container.appendChild(source);
+        }
+        let deg = Math.random() * 10; // this will get a number between 0 and 5;
+        deg *= Math.floor(Math.random()*2) == 1 ? 1 : -1; // this will add minus sign in 50% of cases
+        container.style.transform = 'rotate('+deg+'deg)';
+        container.classList.add("gallery-item");
+        gallery.appendChild(container);
+      }
+    });
+
   }
 
   addEventListenersForModals();
@@ -161,6 +192,7 @@ function initDynamicComponents() {
   initiateSlideShows();
   addEventListenersForHamburger();
   addStickyNav();
+  fetchImages();
 }
 
 function loadingFinished() {

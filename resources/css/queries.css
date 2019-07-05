@@ -164,6 +164,19 @@
     display: block;
   }
 
+  /* gallery */
+
+  .gallery-item {
+    height: 150px;
+    margin: 10px;
+    border: 7px solid #fff;
+    border-bottom: 20px solid #fff;
+  }
+
+  .gallery-item:hover {
+    transform: rotate(0deg) scale(1.8) !important;
+  }
+
 }
 
 
