@@ -174,7 +174,7 @@
   }
 
   .gallery-item:hover {
-    transform: rotate(0deg) scale(1.8) !important;
+    transform: rotate(0deg) scale(1.7) !important;
   }
 
 }
