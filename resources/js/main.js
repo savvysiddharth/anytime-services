@@ -162,10 +162,7 @@ function initDynamicComponents() {
       const resItems = res.data;
       for(const item of resItems) {
         let container;
-        if(item.type === "image") {
-          container = document.createElement("img");
-          container.src = item.images.standard_resolution.url;
-        } else if(item.type === "video") {
+        if (item.type === "video") {
           container = document.createElement("video");
           const source = document.createElement("source");
           source.src = item.videos.low_resolution.url;
@@ -173,6 +170,9 @@ function initDynamicComponents() {
           container.loop = "true";
           container.setAttribute("controls","controls")
           container.appendChild(source);
+        } else { // images and other kinds of posts
+          container = document.createElement("img");
+          container.src = item.images.standard_resolution.url;
         }
         let deg = Math.random() * 10;
         deg *= Math.floor(Math.random()*2) == 1 ? 1 : -1; // this will add minus sign in 50% of cases
@@ -184,23 +184,39 @@ function initDynamicComponents() {
 
   }
 
+  function addPopUpAnimations() {
+    const items = [];
+
+    // for client boxes
+    items.push(...document.querySelectorAll('.tablinks'));
+    items.push(...document.querySelectorAll('.gallery-item'));
+    items.push(...document.querySelectorAll('.logo-container'));
+    for(const item of items) {
+      item.classList.add("wow","zoomIn");
+    }
+  }
+
   addEventListenersForModals();
   addEventListenerForTabs();
   initiateSlideShows();
   addEventListenersForHamburger();
   addStickyNav();
   fetchImages();
+  // addPopUpAnimations();
 }
 
 function loadingFinished() {
   const loader = document.querySelector('.loader-container');
+  const megacontainer = document.querySelector('.mega-container');
   loader.style.animation = 'fadeOut 1s';
   setTimeout(()=> {
     loader.style.display = 'none';
   }, 800);
+  megacontainer.style.display = 'block';
 }
 
 window.onload = function() {
   initDynamicComponents();
   loadingFinished();
+  // new WOW().init();
 };
