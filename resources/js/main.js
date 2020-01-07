@@ -152,7 +152,7 @@ function initDynamicComponents() {
 
   function fetchImages() {
     const count = 8;
-    const url = "https://api.instagram.com/v1/users/self/media/recent/?access_token=15455632614.5d920c2.e349afc3967d46d3835912174daec263&count="+count;
+    const url = "https://api.instagram.com/v1/users/self/media/recent/?access_token=15455632614.5d920c2.c9acf1d6f418412385084524d2d8c3c7&count="+count;
     const gallery = document.querySelector('.gallery-container');
     fetch(url)
     .then(function(response) {
