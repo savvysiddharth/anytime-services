@@ -150,6 +150,20 @@ function initDynamicComponents() {
     }
   }
 
+  // backup images (locally stored on web server) in format of api response (in case instagram api fails)
+  const backupImages = [
+    {images: {standard_resolution: {url: "./backup_media/p1.jpg"}}},
+    {images: {standard_resolution: {url: "./backup_media/p2.jpg"}}},
+    {images: {standard_resolution: {url: "./backup_media/p3.jpg"}}},
+    {images: {standard_resolution: {url: "./backup_media/p4.jpg"}}},
+    {images: {standard_resolution: {url: "./backup_media/p5.jpg"}}},
+    {images: {standard_resolution: {url: "./backup_media/p6.jpg"}}},
+    {images: {standard_resolution: {url: "./backup_media/p7.jpg"}}},
+    {images: {standard_resolution: {url: "./backup_media/p8.jpg"}}},
+    {images: {standard_resolution: {url: "./backup_media/p9.jpg"}}},
+    {images: {standard_resolution: {url: "./backup_media/p10.jpg"}}},
+  ];
+
   function fetchImages() {
     const count = 12;
     const url = "https://api.instagram.com/v1/users/self/media/recent/?access_token=15455632614.5d920c2.c9acf1d6f418412385084524d2d8c3c7&count="+count;
@@ -159,7 +173,12 @@ function initDynamicComponents() {
       return response.json();
     })
     .then(function(res) {
-      const resItems = res.data;
+      let resItems = res.data;
+      if(!resItems) {
+        console.log('Failed to fetch images from Instagram');
+        console.log('Loading backup images');
+        resItems = backupImages;
+      }
       for(const item of resItems) {
         let container;
         if (item.type === "video") {
