@@ -135,6 +135,29 @@ function initDynamicComponents() {
     }
   }
 
+  function renderGallery(resItems) {
+    for(const item of resItems) {
+      let container;
+      if (item.type === "video") {
+        container = document.createElement("video");
+        const source = document.createElement("source");
+        source.src = item.videos.low_resolution.url;
+        container.autoplay = "true";
+        container.loop = "true";
+        container.setAttribute("controls","controls")
+        container.appendChild(source);
+      } else { // images and other kinds of posts
+        container = document.createElement("img");
+        container.src = item.images.standard_resolution.url;
+      }
+      let deg = Math.random() * 10;
+      deg *= Math.floor(Math.random()*2) == 1 ? 1 : -1; // this will add minus sign in 50% of cases
+      container.style.transform = 'rotate('+deg+'deg)';
+      container.classList.add("gallery-item");
+      gallery.appendChild(container);
+    }
+  }
+
   function addStickyNav() {
     if(width > 767) {
 
@@ -179,26 +202,12 @@ function initDynamicComponents() {
         console.log('Loading backup images');
         resItems = backupImages;
       }
-      for(const item of resItems) {
-        let container;
-        if (item.type === "video") {
-          container = document.createElement("video");
-          const source = document.createElement("source");
-          source.src = item.videos.low_resolution.url;
-          container.autoplay = "true";
-          container.loop = "true";
-          container.setAttribute("controls","controls")
-          container.appendChild(source);
-        } else { // images and other kinds of posts
-          container = document.createElement("img");
-          container.src = item.images.standard_resolution.url;
-        }
-        let deg = Math.random() * 10;
-        deg *= Math.floor(Math.random()*2) == 1 ? 1 : -1; // this will add minus sign in 50% of cases
-        container.style.transform = 'rotate('+deg+'deg)';
-        container.classList.add("gallery-item");
-        gallery.appendChild(container);
-      }
+      renderGallery(resItems);
+    })
+    .catch((err) => {
+      console.log("ELLLOOOO HEREEE");
+      resItems = backupImages;
+      renderGallery(resItems);
     });
 
   }
