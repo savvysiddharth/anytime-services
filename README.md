@@ -1,5 +1,16 @@
-## Some Issues
+## UI/UX Project : Anytime Services
 
-The website will look fine only if it stays in the state it was loaded in.
+- Designed a landing page for a firm Anytime Services from scratch.
 
-I mean if the website was loaded on desktop, and window height is of regular desktops than it will work fine till someone naughty resizes window to phone size.
+#### Run Project:
+```
+git clone git@github.com:savvysiddharth/anytime-services.git
+cd anytime-services
+npm i -g live-server
+live-server
+```
+
+#### References:
+- Animations are added using [Animate.css](https://animate.style/).
+- [Ionicons](https://ionic.io/ionicons) is used for various navigation/link icons.
+- Font : [Geo Sans Light](https://www.dafont.com/geo-sans-light.font)
